@@ -158,6 +158,8 @@ figcaption { font-family: var(--sans); font-size: .8rem; color: var(--muted); ma
 .gallery a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 figure .gallery img { aspect-ratio: 1; object-fit: cover; border-radius: 0; transition: opacity .15s; }
 .gallery a:hover img { opacity: .85; }
+.gallery.wide { grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); }
+figure .gallery.wide img { aspect-ratio: 16 / 10; }
 a.video-link { position: relative; display: block; }
 .gallery a[data-type="video"]::after, a.video-link::after {
   content: "";

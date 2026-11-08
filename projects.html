@@ -27,45 +27,24 @@
 
 <main id="main">
   <h1>Projects</h1>
-  <p class="lede">Things I built because I wanted to see them work. Newest first; the research
+  <p class="lede">Things I built because I wanted to see them work, newest first by when they were
+    finished; course projects from the B.Sc. and M.Sc. at NOVA FCT are in among them. The research
     projects are on the <a href="research.html">research page</a>.</p>
 
   <ol class="toc">
-    <li><a href="#open-source">Open-source contributions</a></li>
-    <li><a href="#neecathon">Guitar-playing robot</a></li>
-    <li><a href="#airbrakes">Rocket air brakes</a></li>
-    <li><a href="#airplane-business">Airplane Business</a></li>
-    <li><a href="#car-mapping">Car mapping and navigation</a></li>
-    <li><a href="#opengl">OpenGL experiments</a></li>
-    <li><a href="#cad">3D modelling and printing</a></li>
-    <li><a href="#university">University projects</a></li>
-    <li><a href="#odin">The Odin Project (web)</a></li>
+    <li><a href="#ongoing">Ongoing</a></li>
+    <li><a href="#y2026">2026</a></li>
+    <li><a href="#y2025">2025</a></li>
+    <li><a href="#y2024">2024</a></li>
+    <li><a href="#y2023">2023</a></li>
+    <li><a href="#y2022">2022</a></li>
     <li><a href="#smaller">Smaller things</a></li>
   </ol>
 
   <!-- ============================================================ -->
-  <h2 id="open-source">Open-source contributions</h2>
+  <h2 id="ongoing">Ongoing</h2>
 
-  <h3>PX4: fixed-wing aerodynamics and parameter tools</h3>
-  <p class="meta">2024 – 2025 · Python · PX4, Gazebo, AVL</p>
-  <dl class="facts">
-    <dt>What</dt>
-    <dd>The tooling behind my <a href="research.html#yefece2025">YEF-ECE 2025 paper</a>, offered back to PX4:
-      enhancements to the AVL automation in PX4-gazebo-models, which turns a YAML description of an
-      aircraft into a Gazebo model with real aerodynamic coefficients, and two tools for moving
-      parameters between QGroundControl and PX4's simulation (QGC2ROMFS and ROMFS2QGC).</dd>
-    <dt>Why</dt>
-    <dd>Fixed-wing drones are hard to simulate faithfully; every new airframe meant hand-editing
-      model files.</dd>
-  </dl>
-  <ul class="links">
-    <li><a href="https://github.com/PX4/PX4-gazebo-models/pull/79">PX4-gazebo-models #79</a> (open) ·
-        <a href="https://github.com/PX4/PX4-gazebo-models/pull/61">#61</a> (closed)</li>
-    <li><a href="https://github.com/PX4/PX4-Autopilot/pull/24373">PX4-Autopilot #24373</a> ·
-        <a href="https://github.com/PX4/PX4-Autopilot/pull/24374">#24374</a> (closed)</li>
-  </ul>
-
-  <h3>RomM: save sync with PlayStation consoles</h3>
+  <h3 id="romm">RomM: save sync with PlayStation consoles</h3>
   <p class="meta">2026 · Python · FTP · <span class="status">draft pull request</span></p>
   <dl class="facts">
     <dt>What</dt>
@@ -85,7 +64,25 @@
     <li><a href="https://github.com/rommapp/romm/pull/5319">rommapp/romm #5319</a> (draft, open)</li>
   </ul>
 
-  <h3>Send to Kindle for Zotero</h3>
+  <h3 id="cad">Parts that had to exist</h3>
+  <p class="meta">2020 – 2025 · Onshape, FreeCAD · Prusa MK3S</p>
+  <p>Over 100 hours of modelling, mostly in Onshape, printed in PLA. For research and teams: the
+    component housing and Raspberry Pi mount of the fixed-wing drone, the air brakes of the rocket.
+    At home: an automatic dog feeder with its own circuit, a headset holder, a PS3 controller holder,
+    a wire organiser and smaller fixes. I have also been learning BIM modelling in FreeCAD.</p>
+  <!-- TODO: confirm which of the models in Projects/CAD are your own designs (e.g. the Claptrap model was left out on purpose) and whether you want photos of any print. -->
+
+  <h3 id="codewars">Codewars</h3>
+  <p class="meta">Since 2022 · mostly C</p>
+  <p>Programming puzzles (kata) solved for practice, most of them in C.</p>
+  <p><a href="https://www.codewars.com/users/Fil2King"><img class="badge"
+       src="https://www.codewars.com/users/Fil2King/badges/large" width="400" height="40"
+       alt="Codewars badge for Fil2King showing the current rank and honour."></a></p>
+
+  <!-- ============================================================ -->
+  <h2 id="y2026">2026</h2>
+
+  <h3 id="kindle">Send to Kindle for Zotero</h3>
   <p class="meta">2026 · JavaScript · Zotero 8–10 plugin</p>
   <dl class="facts">
     <dt>What</dt>
@@ -102,7 +99,58 @@
     <li><a href="https://github.com/Filipe-Cavalheiro/zotero-send-to-kindle">Code on GitHub</a> (MIT)</li>
   </ul>
 
-  <h3>CAPTURE wiki</h3>
+  <h3 id="tapdi">A “Simon Says” game you play with your body</h3>
+  <p class="meta">2025 – 2026 · Computer Vision (TAPDI) · Python, OpenCL, OpenCV DNN, OpenPose</p>
+  <!-- TODO: credit teammates if this was a group project. -->
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>A real-time game controlled by body movement through an ordinary webcam: the player has to put
+      their hands over the coloured regions the screen asks for, faster as the score grows.</dd>
+    <dt>How</dt>
+    <dd>A deep-learning face detector finds the player; GPU template matching, written as custom OpenCL
+      kernels, keeps tracking the face from frame to frame. A body region cut out around the face goes
+      to OpenPose for the hand keypoints, which drive the game's states and collision checks. The heavy
+      image processing runs on the GPU; game logic stays in Python.</dd>
+  </dl>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/TAPDI">Code on GitHub</a> (with the course's practical assignments)</li>
+  </ul>
+
+  <!-- ============================================================ -->
+  <h2 id="y2025">2025</h2>
+
+  <h3 id="satellite">Satellite attitude control with nonlinear MPC</h3>
+  <p class="meta">2025 · Control in Cyber-Physical Systems (CPCS), project II · MATLAB · with António Canteiro and Rafael Louro</p>
+  <p>Attitude control of a rigid-body satellite, with orientation on SO(3) and torque as input: a
+    nonlinear model-predictive controller for the unconstrained manoeuvre and again with constraints.</p>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/CPCS_Proj2">Code and report on GitHub</a></li>
+  </ul>
+
+  <h3 id="tractor">An autonomous sprayer for an olive orchard</h3>
+  <p class="meta">2025 · Control in Cyber-Physical Systems (CPCS), project I · MATLAB · with António Canteiro and Rafael Louro</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>Automating a tractor that tows a sprayer through an olive orchard, in three steps of rising
+      difficulty: drive to a point, follow a row despite terrain disturbances, then carry out the whole
+      spraying job, delivering 8 ml to every tree within reach while keeping the cost per hectare low and
+      staying clear of the trees.</dd>
+    <dt>How</dt>
+    <dd>The tractor is a nonlinear kinematic model with a towed trailer. The first step uses a linear
+      model-predictive controller; the full job uses a Lyapunov-based backstepping controller that
+      follows waypoints laid out between the rows at 40 km/h, with tractor and trailer integrated with
+      <code>ode45</code>. The spray is a half-disc behind the trailer, and its overlap with each tree's
+      canopy, integrated over time, gives the dose each tree received.</dd>
+  </dl>
+  <figure>
+    <div class="gallery">
+      <a href="assets/gallery/matlab/tractor.mp4" data-type="video" data-caption="Simulation: tractor, hitch, trailer and spray area (blue) moving through the rows."><img src="assets/gallery/matlab/tractor-video-thumb.jpg" width="480" height="500" loading="lazy" alt="Animation: the tractor, drawn as a circle, tows the sprayer down the rows of olive trees; the blue half-disc behind the trailer is the spray."></a>
+      <a href="assets/gallery/matlab/tractor-path.png" data-caption="The whole run: reference (thin line) and the path the tractor followed (red)."><img src="assets/gallery/matlab/tractor-path-thumb.jpg" width="480" height="490" loading="lazy" alt="Plot of the tractor path among twelve olive trees drawn as circles: the red path follows the reference between the rows, swinging wide at each turn."></a>
+    </div>
+    <figcaption>Re-run in MATLAB R2024a for this page.</figcaption>
+  </figure>
+
+  <h3 id="capture-wiki">CAPTURE wiki</h3>
   <p class="meta">2025 · MkDocs</p>
   <p>Documentation for preparing, testing and flying indoor and outdoor missions with the lab's
     M690B drone, plus a single-piece EasyGlider CAD model, for the CAPTURE research project.</p>
@@ -110,9 +158,55 @@
     <li><a href="https://cybaer-nova.github.io/capture-wiki/">cybaer-nova.github.io/capture-wiki</a></li>
   </ul>
 
-  <!-- ============================================================ -->
-  <h2 id="neecathon">Hackathon · 2025</h2>
-  <h3>A robot that plays a rhythm game</h3>
+  <h3 id="astar">A ground vehicle that avoids obstacles and detects its own faults</h3>
+  <p class="meta">2025 · Decision Systems (SDC) · MATLAB · A*, Kalman filter, set-valued observers</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>A decision system for a ground vehicle, built in three iterations: a double-integrator model with
+      an A* path smoothed by splines, a controller and a fault-detection observer; then the nonlinear
+      vehicle model handled by feedback linearisation; then an optimised version of the whole chain.</dd>
+    <dt>How</dt>
+    <dd>The map is a 20 × 20 grid. At every step A* plans a path to the target around an obstacle whose
+      keep-out zone grows with how unsure the vehicle is of its own position; cubic splines turn the
+      grid path into a smooth reference, which a pole-placement controller follows. A Kalman filter
+      estimates the state, and a set-valued observer built on constrained zonotopes bounds every
+      position the vehicle could be in: if that set collapses, the measurements no longer fit the model
+      and a fault is reported.</dd>
+  </dl>
+  <figure>
+    <div class="gallery">
+      <a href="assets/gallery/matlab/astar.mp4" data-type="video" data-caption="Simulation: the path is re-planned at every step around the obstacle, which grows with the uncertainty of the position estimate."><img src="assets/gallery/matlab/astar-video-thumb.jpg" width="480" height="480" loading="lazy" alt="Animation: the vehicle drives from the start to the target around an elliptical obstacle, with the planned path redrawn at every step."></a>
+      <a href="assets/gallery/matlab/astar-path.png" data-caption="The finished run: blocked grid cells (red), the vehicle positions (circles) and the last set-valued estimate (box)."><img src="assets/gallery/matlab/astar-path-thumb.jpg" width="480" height="492" loading="lazy" alt="Plot of the final run: the obstacle as a blue ellipse surrounded by red grid points marked as blocked, the planned path and the vehicle positions going around it to the target, and a box showing the set of possible positions."></a>
+    </div>
+    <figcaption>Re-run in MATLAB R2024a for this page, with the start and target fixed instead of picked with the mouse.</figcaption>
+  </figure>
+
+  <h3 id="soil-sensor">An open, solar-powered soil sensor</h3>
+  <p class="meta">2025 · SAD course project · <span class="status">design proposal</span></p>
+  <!-- TODO: check the course's English name and whether the node was built or only proposed. -->
+  <p>A low-cost, solar-powered soil-monitoring node that reports over LoRa, designed with open hardware
+    and software as an alternative to commercial sensors costing around €300 each plus a yearly fee.</p>
+
+  <h3 id="px4">PX4: fixed-wing aerodynamics and parameter tools</h3>
+  <p class="meta">2024 – 2025 · Python · PX4, Gazebo, AVL</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>The tooling behind my <a href="research.html#yefece2025">YEF-ECE 2025 paper</a>, offered back to PX4:
+      enhancements to the AVL automation in PX4-gazebo-models, which turns a YAML description of an
+      aircraft into a Gazebo model with real aerodynamic coefficients, and two tools for moving
+      parameters between QGroundControl and PX4's simulation (QGC2ROMFS and ROMFS2QGC).</dd>
+    <dt>Why</dt>
+    <dd>Fixed-wing drones are hard to simulate faithfully; every new airframe meant hand-editing
+      model files.</dd>
+  </dl>
+  <ul class="links">
+    <li><a href="https://github.com/PX4/PX4-gazebo-models/pull/79">PX4-gazebo-models #79</a> (open) ·
+        <a href="https://github.com/PX4/PX4-gazebo-models/pull/61">#61</a> (closed)</li>
+    <li><a href="https://github.com/PX4/PX4-Autopilot/pull/24373">PX4-Autopilot #24373</a> ·
+        <a href="https://github.com/PX4/PX4-Autopilot/pull/24374">#24374</a> (closed)</li>
+  </ul>
+
+  <h3 id="neecathon">A robot that plays a rhythm game</h3>
   <!-- TODO: confirm the event name (CV says "NEECathon 2025"; the banner in the photo reads "Makeathon NEEC") and the team members you want credited. -->
   <p class="meta">February 2025 · NEECathon · <span class="status">winning team</span> · ESP32, FreeRTOS, Python</p>
   <dl class="facts">
@@ -147,8 +241,83 @@
   </figure>
 
   <!-- ============================================================ -->
-  <h2 id="airbrakes">Rocket air brakes · 2024</h2>
-  <h3>Air brakes for a sounding rocket</h3>
+  <h2 id="y2024">2024</h2>
+
+  <h3 id="road-signs">Road-sign recognition with hand-written image processing</h3>
+  <p class="meta">2024 · Sensor Systems (SS) · C#, Emgu CV · with Diogo Novais</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>A Windows program that finds traffic signs in a photo, tells warning triangles from round signs
+      and reads the number on speed-limit signs. The image processing is written by hand, working
+      directly on the pixel buffer; the library is used to hold the images.</dd>
+    <dt>How</dt>
+    <dd>The image goes to HSV and a red filter keeps the sign borders; connected-component labelling
+      separates the blobs, small ones are dropped, and each blob's bounding box and circularity say
+      what shape it is. Inside a round sign a black filter isolates the digits, which are compared
+      with reference digits to read the limit.</dd>
+  </dl>
+  <figure>
+    <div class="gallery">
+      <a href="assets/gallery/road-signs/road-signs-01.jpg"><img src="assets/gallery/road-signs/road-signs-01-thumb.jpg" width="480" height="854" loading="lazy" alt="The program on a photo with a 50 km/h sign: the cropped sign and its digits shown above a table of results."></a>
+      <a href="assets/gallery/road-signs/road-signs-02.jpg"><img src="assets/gallery/road-signs/road-signs-02-thumb.jpg" width="480" height="854" loading="lazy" alt="A road photo with a dangerous-curve sign above a no-overtaking sign, loaded in the program."></a>
+      <a href="assets/gallery/road-signs/road-signs-03.jpg"><img src="assets/gallery/road-signs/road-signs-03-thumb.jpg" width="480" height="854" loading="lazy" alt="A 50 km/h sign after segmentation, with the regions found around its digits."></a>
+      <a href="assets/gallery/road-signs/road-signs-04.jpg"><img src="assets/gallery/road-signs/road-signs-04-thumb.jpg" width="480" height="854" loading="lazy" alt="Output of the red filter: a warning triangle and a round sign isolated from the background."></a>
+      <a href="assets/gallery/road-signs/road-signs-05.jpg"><img src="assets/gallery/road-signs/road-signs-05-thumb.jpg" width="480" height="854" loading="lazy" alt="Output of the red filter on a warning triangle."></a>
+      <a href="assets/gallery/road-signs/road-signs-06.jpg"><img src="assets/gallery/road-signs/road-signs-06-thumb.jpg" width="480" height="854" loading="lazy" alt="A 40 km/h sign with boxes around the detected digits."></a>
+      <a href="assets/gallery/road-signs/road-signs-07.jpg"><img src="assets/gallery/road-signs/road-signs-07-thumb.jpg" width="480" height="854" loading="lazy" alt="A 50 km/h sign next to its red ring as seen by the filter."></a>
+    </div>
+    <figcaption>Screens of the program at work.</figcaption>
+  </figure>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/Road-Sign-Detection">Code on GitHub</a></li>
+  </ul>
+
+  <h3 id="airplane-business">Airplane Business</h3>
+  <p class="meta">Summer 2024 · C · Windows console, ANSI escape codes</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>A text-mode airline manager drawn entirely with escape codes and box-drawing characters: create
+      and delete aircraft of a given type (A318 to A321 seat maps), see a flight's occupancy, reserve a
+      specific seat, fill a flight with random passengers from name lists, look up who sits where, show
+      an ASCII world map and start a flight.</dd>
+    <dt>Why</dt>
+    <dd>A summer project to see how far a terminal user interface can go in plain C, with no libraries.</dd>
+  </dl>
+  <figure>
+    <div class="gallery wide">
+      <a href="assets/gallery/airplane-business/airplane-business-01.png"><img src="assets/gallery/airplane-business/airplane-business-01-thumb.jpg" width="480" height="300" loading="lazy" alt="The start screen: the Airplane Business logo in ASCII art inside a double-line box, above the main menu of nine options."></a>
+      <a href="assets/gallery/airplane-business/airplane-business-02.png"><img src="assets/gallery/airplane-business/airplane-business-02-thumb.jpg" width="480" height="300" loading="lazy" alt="Creating a plane: the list of aircraft types with a preview of the A318 seat map, 3 executive and 15 tourist rows, seats lettered a to f."></a>
+      <a href="assets/gallery/airplane-business/airplane-business-03.png"><img src="assets/gallery/airplane-business/airplane-business-03-thumb.jpg" width="480" height="300" loading="lazy" alt="After naming the new plane, choosing its current location from the list of airport codes."></a>
+      <a href="assets/gallery/airplane-business/airplane-business-04.png"><img src="assets/gallery/airplane-business/airplane-business-04-thumb.jpg" width="480" height="300" loading="lazy" alt="Occupancy of an A318 filled with random passengers: bar charts by window, aisle and centre seat and by class, above the seat map where free seats are dots."></a>
+      <a href="assets/gallery/airplane-business/airplane-business-05.png"><img src="assets/gallery/airplane-business/airplane-business-05-thumb.jpg" width="480" height="300" loading="lazy" alt="The ASCII world map."></a>
+      <a href="assets/gallery/airplane-business/airplane-business-06.png"><img src="assets/gallery/airplane-business/airplane-business-06-thumb.jpg" width="480" height="300" loading="lazy" alt="Starting a flight: picking the plane, then its destination airport."></a>
+    </div>
+    <figcaption>Screens from a run on Linux: menu, creating a plane, occupancy, world map and starting a flight.</figcaption>
+  </figure>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/AirPlane-Business">Code on GitHub</a></li>
+  </ul>
+
+  <h3 id="opengl">OpenGL experiments</h3>
+  <p class="meta">2023 - 2024 · C, C++ · OpenGL, GLFW, GLSL</p>
+  <p>The graphics side of the car project and a few half-finished experiments around it: a C++
+    rewrite of the mapping viewer with its own serial-communication class and shaders for the grid,
+    the car and the obstacle cubes, a robot arm and SLAM-style mapping.</p>
+  <p>I learnt OpenGL by following <a href="https://learnopengl.com/">LearnOpenGL</a> by Joey de Vries;
+    the triangle and the lit cubes below are exercises from it.</p>
+  <figure>
+    <div class="gallery">
+      <a href="assets/gallery/opengl/opengl-01.jpg"><img src="assets/gallery/opengl/opengl-01-thumb.jpg" width="480" height="270" loading="lazy" alt="An orange cube lit by a white cube that stands in for the light source."></a>
+      <a href="assets/gallery/opengl/opengl-02.jpg"><img src="assets/gallery/opengl/opengl-02-thumb.jpg" width="480" height="270" loading="lazy" alt="A triangle with red, green and blue corners blending into each other."></a>
+      <a href="assets/gallery/opengl/opengl-video-1.mp4" data-type="video" data-caption="Video, 7 s: a cube lit by a light whose colour changes over time."><img src="assets/gallery/opengl/opengl-video-1-thumb.jpg" width="480" height="266" loading="lazy" alt="Video, 7 s: a cube lit by a light whose colour changes over time."></a>
+    </div>
+    <figcaption>Exercises from <a href="https://learnopengl.com/">LearnOpenGL</a>.</figcaption>
+  </figure>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/openGL-Environment">openGL-Environment</a></li>
+  </ul>
+
+  <h3 id="airbrakes">Air brakes for a sounding rocket</h3>
   <p class="meta">2024 · Introduction to Scientific Research Program (PIIC), NOVA FCT · Java, C/C++, Arduino, OpenRocket</p>
   <dl class="facts">
     <dt>What</dt>
@@ -189,39 +358,7 @@
     <li><a href="https://www.youtube.com/watch?v=me6ttod58mk">Rocket Air Brakes (development)</a> on YouTube</li>
   </ul>
 
-  <!-- ============================================================ -->
-  <h2 id="airplane-business">Terminal app · 2024</h2>
-  <h3>Airplane Business</h3>
-  <p class="meta">Summer 2024 · C · Windows console, ANSI escape codes</p>
-  <dl class="facts">
-    <dt>What</dt>
-    <dd>A text-mode airline manager drawn entirely with escape codes and box-drawing characters: create
-      and delete aircraft of a given type (A318 to A321 seat maps), see a flight's occupancy, reserve a
-      specific seat, fill a flight with random passengers from name lists, look up who sits where, show
-      an ASCII world map and start a flight.</dd>
-    <dt>Why</dt>
-    <dd>A summer project to see how far a terminal user interface can go in plain C, with no libraries.</dd>
-  </dl>
-  <figure>
-    <img src="assets/airplane-business-occupancy.png" width="900" height="400" loading="lazy"
-         alt="Terminal screen inside a double-line box: bar charts of window, aisle and centre seat occupancy and of executive and tourist class, above a seat map of an A318 where reserved seats show their letter and free seats a dot.">
-    <figcaption>Occupancy of an A318 filled with random passengers: by seat position and class, and the
-      seat map.</figcaption>
-  </figure>
-  <ul class="links">
-    <li><a href="https://github.com/Filipe-Cavalheiro/AirPlane-Business">Code on GitHub</a></li>
-  </ul>
-
-  <h3 id="codewars">Codewars</h3>
-  <p class="meta">Since 2022 · mostly C</p>
-  <p>Programming puzzles (kata) solved for practice, most of them in C.</p>
-  <p><a href="https://www.codewars.com/users/Fil2King"><img class="badge"
-       src="https://www.codewars.com/users/Fil2King/badges/large" width="400" height="40"
-       alt="Codewars badge for Fil2King showing the current rank and honour."></a></p>
-
-  <!-- ============================================================ -->
-  <h2 id="car-mapping">Robotics · 2023 – 2024</h2>
-  <h3>Car Mapping and Navigation</h3>
+  <h3 id="car-mapping">Car Mapping and Navigation</h3>
   <p class="meta">2023 – 2024 · C, C++, OpenGL · Arduino (ATmega328P)</p>
   <dl class="facts">
     <dt>What</dt>
@@ -243,153 +380,19 @@
     <li><a href="https://github.com/Filipe-Cavalheiro/Car-Mapping-and-Navigation">Code on GitHub</a></li>
   </ul>
 
-  <h3 id="opengl">OpenGL experiments</h3>
-  <p class="meta">2023 - 2024 · C, C++ · OpenGL, GLFW, GLSL</p>
-  <p>The graphics side of the car project and a few half-finished experiments around it: a C++
-    rewrite of the mapping viewer with its own serial-communication class and shaders for the grid,
-    the car and the obstacle cubes, a robot arm and SLAM-style mapping.</p>
-  <p>I learnt OpenGL by following <a href="https://learnopengl.com/">LearnOpenGL</a> by Joey de Vries;
-    the triangle and the lit cubes below are exercises from it.</p>
-  <figure>
-    <div class="gallery">
-      <a href="assets/gallery/opengl/opengl-01.jpg"><img src="assets/gallery/opengl/opengl-01-thumb.jpg" width="480" height="270" loading="lazy" alt="An orange cube lit by a white cube that stands in for the light source."></a>
-      <a href="assets/gallery/opengl/opengl-02.jpg"><img src="assets/gallery/opengl/opengl-02-thumb.jpg" width="480" height="270" loading="lazy" alt="A triangle with red, green and blue corners blending into each other."></a>
-      <a href="assets/gallery/opengl/opengl-video-1.mp4" data-type="video" data-caption="Video, 7 s: a cube lit by a light whose colour changes over time."><img src="assets/gallery/opengl/opengl-video-1-thumb.jpg" width="480" height="266" loading="lazy" alt="Video, 7 s: a cube lit by a light whose colour changes over time."></a>
-    </div>
-    <figcaption>Exercises from <a href="https://learnopengl.com/">LearnOpenGL</a>.</figcaption>
-  </figure>
-  <ul class="links">
-    <li><a href="https://github.com/Filipe-Cavalheiro/openGL-Environment">openGL-Environment</a></li>
-  </ul>
-
   <!-- ============================================================ -->
-  <h2 id="cad">3D modelling and printing</h2>
-  <h3>Parts that had to exist</h3>
-  <p class="meta">2020 – 2025 · Onshape, FreeCAD · Prusa MK3S</p>
-  <p>Over 100 hours of modelling, mostly in Onshape, printed in PLA. For research and teams: the
-    component housing and Raspberry Pi mount of the fixed-wing drone, the air brakes of the rocket.
-    At home: an automatic dog feeder with its own circuit, a headset holder, a PS3 controller holder,
-    a wire organiser and smaller fixes. I have also been learning BIM modelling in FreeCAD.</p>
-  <!-- TODO: confirm which of the models in Projects/CAD are your own designs (e.g. the Claptrap model was left out on purpose) and whether you want photos of any print. -->
+  <h2 id="y2023">2023</h2>
 
-  <!-- ============================================================ -->
-  <h2 id="university">University projects · 2022 – 2026</h2>
-  <p>Course projects from the B.Sc. and M.Sc. in Electrical and Computer Engineering at NOVA FCT
-    that grew beyond the assignment. Newest first.</p>
-
-  <h3>A “Simon Says” game you play with your body</h3>
-  <p class="meta">2025 · Computer Vision (TAPDI) · Python, OpenCL, OpenCV DNN, OpenPose</p>
-  <!-- TODO: credit teammates if this was a group project. -->
-  <dl class="facts">
-    <dt>What</dt>
-    <dd>A real-time game controlled by body movement through an ordinary webcam: the player has to put
-      their hands over the coloured regions the screen asks for, faster as the score grows.</dd>
-    <dt>How</dt>
-    <dd>A deep-learning face detector finds the player; GPU template matching, written as custom OpenCL
-      kernels, keeps tracking the face from frame to frame. A body region cut out around the face goes
-      to OpenPose for the hand keypoints, which drive the game's states and collision checks. The heavy
-      image processing runs on the GPU; game logic stays in Python.</dd>
-  </dl>
-  <ul class="links">
-    <li><a href="https://github.com/Filipe-Cavalheiro/TAPDI">Code on GitHub</a> (with the course's practical assignments)</li>
-  </ul>
-
-  <h3 id="tractor">An autonomous sprayer for an olive orchard</h3>
-  <p class="meta">2025 · Control in Cyber-Physical Systems (CPCS), project I · MATLAB · with António Canteiro and Rafael Louro</p>
-  <dl class="facts">
-    <dt>What</dt>
-    <dd>Automating a tractor that tows a sprayer through an olive orchard, in three steps of rising
-      difficulty: drive to a point, follow a row despite terrain disturbances, then carry out the whole
-      spraying job, delivering 8 ml to every tree within reach while keeping the cost per hectare low and
-      staying clear of the trees.</dd>
-    <dt>How</dt>
-    <dd>The tractor is a nonlinear kinematic model with a towed trailer. The first step uses a linear
-      model-predictive controller; the full job uses a Lyapunov-based backstepping controller that
-      follows waypoints laid out between the rows at 40 km/h, with tractor and trailer integrated with
-      <code>ode45</code>. The spray is a half-disc behind the trailer, and its overlap with each tree's
-      canopy, integrated over time, gives the dose each tree received.</dd>
-  </dl>
-  <figure>
-    <div class="gallery">
-      <a href="assets/gallery/matlab/tractor.mp4" data-type="video" data-caption="Simulation: tractor, hitch, trailer and spray area (blue) moving through the rows."><img src="assets/gallery/matlab/tractor-video-thumb.jpg" width="480" height="500" loading="lazy" alt="Animation: the tractor, drawn as a circle, tows the sprayer down the rows of olive trees; the blue half-disc behind the trailer is the spray."></a>
-      <a href="assets/gallery/matlab/tractor-path.png" data-caption="The whole run: reference (thin line) and the path the tractor followed (red)."><img src="assets/gallery/matlab/tractor-path-thumb.jpg" width="480" height="490" loading="lazy" alt="Plot of the tractor path among twelve olive trees drawn as circles: the red path follows the reference between the rows, swinging wide at each turn."></a>
-    </div>
-    <figcaption>Re-run in MATLAB R2024a for this page.</figcaption>
-  </figure>
-
-  <h3>Satellite attitude control with nonlinear MPC</h3>
-  <p class="meta">2025 · Control in Cyber-Physical Systems (CPCS), project II · MATLAB · with António Canteiro and Rafael Louro</p>
-  <p>Attitude control of a rigid-body satellite, with orientation on SO(3) and torque as input: a
-    nonlinear model-predictive controller for the unconstrained manoeuvre and again with constraints.</p>
-  <ul class="links">
-    <li><a href="https://github.com/Filipe-Cavalheiro/CPCS_Proj2">Code and report on GitHub</a></li>
-  </ul>
-
-  <h3 id="astar">A ground vehicle that avoids obstacles and detects its own faults</h3>
-  <p class="meta">2025 · Decision Systems (SDC) · MATLAB · A*, Kalman filter, set-valued observers</p>
-  <dl class="facts">
-    <dt>What</dt>
-    <dd>A decision system for a ground vehicle, built in three iterations: a double-integrator model with
-      an A* path smoothed by splines, a controller and a fault-detection observer; then the nonlinear
-      vehicle model handled by feedback linearisation; then an optimised version of the whole chain.</dd>
-    <dt>How</dt>
-    <dd>The map is a 20 × 20 grid. At every step A* plans a path to the target around an obstacle whose
-      keep-out zone grows with how unsure the vehicle is of its own position; cubic splines turn the
-      grid path into a smooth reference, which a pole-placement controller follows. A Kalman filter
-      estimates the state, and a set-valued observer built on constrained zonotopes bounds every
-      position the vehicle could be in: if that set collapses, the measurements no longer fit the model
-      and a fault is reported.</dd>
-  </dl>
-  <figure>
-    <div class="gallery">
-      <a href="assets/gallery/matlab/astar.mp4" data-type="video" data-caption="Simulation: the path is re-planned at every step around the obstacle, which grows with the uncertainty of the position estimate."><img src="assets/gallery/matlab/astar-video-thumb.jpg" width="480" height="480" loading="lazy" alt="Animation: the vehicle drives from the start to the target around an elliptical obstacle, with the planned path redrawn at every step."></a>
-      <a href="assets/gallery/matlab/astar-path.png" data-caption="The finished run: blocked grid cells (red), the vehicle positions (circles) and the last set-valued estimate (box)."><img src="assets/gallery/matlab/astar-path-thumb.jpg" width="480" height="492" loading="lazy" alt="Plot of the final run: the obstacle as a blue ellipse surrounded by red grid points marked as blocked, the planned path and the vehicle positions going around it to the target, and a box showing the set of possible positions."></a>
-    </div>
-    <figcaption>Re-run in MATLAB R2024a for this page, with the start and target fixed instead of picked with the mouse.</figcaption>
-  </figure>
-
-  <h3>An open, solar-powered soil sensor</h3>
-  <p class="meta">2025 · SAD course project · <span class="status">design proposal</span></p>
-  <!-- TODO: check the course's English name and whether the node was built or only proposed. -->
-  <p>A low-cost, solar-powered soil-monitoring node that reports over LoRa, designed with open hardware
-    and software as an alternative to commercial sensors costing around €300 each plus a yearly fee.</p>
-
-  <h3 id="road-signs">Road-sign recognition with hand-written image processing</h3>
-  <p class="meta">2024 · Sensor Systems (SS) · C#, Emgu CV · with Diogo Novais</p>
-  <dl class="facts">
-    <dt>What</dt>
-    <dd>A Windows program that finds traffic signs in a photo, tells warning triangles from round signs
-      and reads the number on speed-limit signs. The image processing is written by hand, working
-      directly on the pixel buffer; the library is used to hold the images.</dd>
-    <dt>How</dt>
-    <dd>The image goes to HSV and a red filter keeps the sign borders; connected-component labelling
-      separates the blobs, small ones are dropped, and each blob's bounding box and circularity say
-      what shape it is. Inside a round sign a black filter isolates the digits, which are compared
-      with reference digits to read the limit.</dd>
-  </dl>
-  <figure>
-    <div class="gallery">
-      <a href="assets/gallery/road-signs/road-signs-01.jpg"><img src="assets/gallery/road-signs/road-signs-01-thumb.jpg" width="480" height="854" loading="lazy" alt="The program on a photo with a 50 km/h sign: the cropped sign and its digits shown above a table of results."></a>
-      <a href="assets/gallery/road-signs/road-signs-02.jpg"><img src="assets/gallery/road-signs/road-signs-02-thumb.jpg" width="480" height="854" loading="lazy" alt="A road photo with a dangerous-curve sign above a no-overtaking sign, loaded in the program."></a>
-      <a href="assets/gallery/road-signs/road-signs-03.jpg"><img src="assets/gallery/road-signs/road-signs-03-thumb.jpg" width="480" height="854" loading="lazy" alt="A 50 km/h sign after segmentation, with the regions found around its digits."></a>
-      <a href="assets/gallery/road-signs/road-signs-04.jpg"><img src="assets/gallery/road-signs/road-signs-04-thumb.jpg" width="480" height="854" loading="lazy" alt="Output of the red filter: a warning triangle and a round sign isolated from the background."></a>
-      <a href="assets/gallery/road-signs/road-signs-05.jpg"><img src="assets/gallery/road-signs/road-signs-05-thumb.jpg" width="480" height="854" loading="lazy" alt="Output of the red filter on a warning triangle."></a>
-      <a href="assets/gallery/road-signs/road-signs-06.jpg"><img src="assets/gallery/road-signs/road-signs-06-thumb.jpg" width="480" height="854" loading="lazy" alt="A 40 km/h sign with boxes around the detected digits."></a>
-      <a href="assets/gallery/road-signs/road-signs-07.jpg"><img src="assets/gallery/road-signs/road-signs-07-thumb.jpg" width="480" height="854" loading="lazy" alt="A 50 km/h sign next to its red ring as seen by the filter."></a>
-    </div>
-    <figcaption>Screens of the program at work.</figcaption>
-  </figure>
-  <ul class="links">
-    <li><a href="https://github.com/Filipe-Cavalheiro/Road-Sign-Detection">Code on GitHub</a></li>
-  </ul>
-
-  <h3>Real-time systems: conveyor, warehouse and car wash</h3>
+  <h3 id="str">Real-time systems: conveyor, warehouse and car wash</h3>
   <p class="meta">2023 · Real-Time Systems (STR) · C++, FreeRTOS, Java</p>
   <p>Three lab projects against simulated industrial plants: a splitter conveyor controlled by FreeRTOS
     tasks with events, queues and shared-resource locking; an automated pallet storage system written in
     Java; and a car-wash service manager in C++.</p>
 
-  <h3>Conway's Game of Life in 8086 assembly</h3>
+  <!-- ============================================================ -->
+  <h2 id="y2022">2022</h2>
+
+  <h3 id="game-of-life">Conway's Game of Life in 8086 assembly</h3>
   <p class="meta">2022 · Microprocessors · x86 assembly (8086), DOS, VGA mode 13h · with Diogo Novais</p>
   <dl class="facts">
     <dt>What</dt>
@@ -418,9 +421,7 @@
     <li><a href="https://github.com/Filipe-Cavalheiro/LearnAssembly8086">Code on GitHub</a> (<code>Conway game of life.asm</code>, with smaller assembly exercises)</li>
   </ul>
 
-  <!-- ============================================================ -->
-  <h2 id="odin">Web · 2022</h2>
-  <h3>The Odin Project</h3>
+  <h3 id="odin">The Odin Project</h3>
   <p class="meta">Summer 2022 · HTML, CSS, JavaScript</p>
   <p>My first web projects, from The Odin Project's Foundations course, built over a summer.
     The four with a live version open straight in the browser.</p>
