@@ -30,16 +30,11 @@ Facts that need your confirmation are marked in the HTML with `<!-- TODO: ... --
 grep -n "TODO" *.html
 ```
 
-## Deploy for free on GitHub Pages (later)
+## Live site
 
-This repository is **private**. On a free GitHub account, Pages only publishes from public
-repositories (private-repo Pages needs GitHub Pro), and a published site is public anyway. When ready:
+Published with GitHub Pages from `main`, folder `/ (root)`:
+**https://filipe-cavalheiro.github.io/website/**
 
-1. Resolve the TODOs.
-2. Either make this repository public (Settings → General → Danger Zone → Change visibility), or
-   push the same files to a new public repository named `Filipe-Cavalheiro.github.io`.
-3. Settings → Pages → Build and deployment → Source: *Deploy from a branch*, branch `main`, folder `/ (root)`.
-4. The site appears at `https://filipe-cavalheiro.github.io/` (user-site repository) or
-   `https://filipe-cavalheiro.github.io/<repo>/` within a minute or two.
-
-All links between pages are relative, so the site works at either address.
+Every push to `main` redeploys it within a minute or two. All links between pages are relative, so
+the same files also work under `https://filipe-cavalheiro.github.io/` if they are ever moved to a
+repository named `Filipe-Cavalheiro.github.io`.
