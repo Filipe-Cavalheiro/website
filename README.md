@@ -1,6 +1,4 @@
-# Filipe Cavalheiro — personal website
-
-Plain HTML and CSS. No JavaScript, no frameworks, no build step, no external fonts or CDNs.
+# Filipe Cavalheiro - personal website
 
 | File | Content |
 |---|---|
@@ -9,7 +7,7 @@ Plain HTML and CSS. No JavaScript, no frameworks, no build step, no external fon
 | `projects.html` | Projects in detail: what, why, how, tech, links |
 | `about.html` | Education, experience, awards, skills, languages, contact |
 | `style.css` | The only stylesheet (light/dark via `prefers-color-scheme`) |
-| `assets/` | Paper figures and one hackathon photo, resized |
+| `assets/` | photo|
 
 The sphere on the home page is an inline SVG of a Fibonacci lattice (160 points), the point
 distribution used in the encirclement research. Its slow rotation is pure CSS and stops when the

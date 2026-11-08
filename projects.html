@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projects · Filipe Cavalheiro</title>
-<meta name="description" content="Projects by Filipe Cavalheiro: embedded systems, rocket air brakes, a guitar-playing robot, OpenGL mapping, C terminal apps, open-source contributions and 3D printing.">
+<meta name="description" content="Projects by Filipe Cavalheiro: embedded systems, rocket air brakes, a guitar-playing robot, OpenGL mapping, C terminal apps, open-source contributions, 3D printing, university projects such as Conway's Game of Life in 8086 assembly, and first web projects.">
 <meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23b8360f'/%3E%3C/svg%3E">
@@ -37,7 +37,8 @@
     <li><a href="#car-mapping">Car mapping and navigation</a></li>
     <li><a href="#opengl">OpenGL experiments</a></li>
     <li><a href="#cad">3D modelling and printing</a></li>
-    <li><a href="#vid2bim">vid2bim</a></li>
+    <li><a href="#university">University projects</a></li>
+    <li><a href="#odin">The Odin Project (web)</a></li>
     <li><a href="#smaller">Smaller things</a></li>
   </ol>
 
@@ -190,12 +191,17 @@
       in C with OpenGL, keeps track of the car's pose and turns each distance reading into a block in a
       3D scene you can fly through.</dd>
   </dl>
+  <figure>
+    <img src="assets/elegoo_car.png" width="900" height="675" loading="lazy"
+         alt="Close-up of a small Elegoo car (V1).">
+    <figcaption>The Elegoo car (V1).</figcaption>
+  </figure>
   <ul class="links">
     <li><a href="https://github.com/Filipe-Cavalheiro/Car-Mapping-and-Navigation">Code on GitHub</a></li>
   </ul>
 
   <h3 id="opengl">OpenGL experiments</h3>
-  <p class="meta">2023 – 2024 · C, C++ · OpenGL, GLFW, GLSL</p>
+  <p class="meta">2023 - 2024 · C, C++ · OpenGL, GLFW, GLSL</p>
   <p>The graphics side of the car project and a few half-finished experiments around it: a C++
     rewrite of the mapping viewer with its own serial-communication class and shaders for the grid,
     the car and the obstacle cubes, a robot arm and SLAM-style mapping.</p>
@@ -214,15 +220,109 @@
   <!-- TODO: confirm which of the models in Projects/CAD are your own designs (e.g. the Claptrap model was left out on purpose) and whether you want photos of any print. -->
 
   <!-- ============================================================ -->
-  <h2 id="vid2bim">Work in progress · 2026</h2>
-  <h3>vid2bim</h3>
-  <!-- TODO: vid2bim is unpublished and in progress; remove this section if you prefer not to show it yet. -->
-  <p class="meta">2026 · Python · COLMAP, Blender, MoGe-2, Open3D · <span class="status">in progress</span></p>
-  <p>From a phone video of a room to a 3D model. COLMAP recovers the camera track and a sparse point
-    cloud, which a Blender script turns into a scene with the animated camera. For a dense, metric
-    model, COLMAP multi-view stereo is combined with MoGe-2 monocular depth (fitted per frame to the
-    stereo depth) and fused in a TSDF volume with Open3D; the goal is to go on to a BIM model of the
-    room.</p>
+  <h2 id="university">University projects · 2022 – 2026</h2>
+  <p>Course projects from the B.Sc. and M.Sc. in Electrical and Computer Engineering at NOVA FCT
+    that grew beyond the assignment. Newest first.</p>
+
+  <h3>A “Simon Says” game you play with your body</h3>
+  <p class="meta">2025 · Computer Vision (TAPDI) · Python, OpenCL, OpenCV DNN, OpenPose</p>
+  <!-- TODO: credit teammates if this was a group project. -->
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>A real-time game controlled by body movement through an ordinary webcam: the player has to put
+      their hands over the coloured regions the screen asks for, faster as the score grows.</dd>
+    <dt>How</dt>
+    <dd>A deep-learning face detector finds the player; GPU template matching, written as custom OpenCL
+      kernels, keeps tracking the face from frame to frame. A body region cut out around the face goes
+      to OpenPose for the hand keypoints, which drive the game's states and collision checks. The heavy
+      image processing runs on the GPU; game logic stays in Python.</dd>
+  </dl>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/TAPDI">Code on GitHub</a> (with the course's practical assignments)</li>
+  </ul>
+
+  <h3>Nonlinear MPC: a satellite and an orchard tractor</h3>
+  <p class="meta">2025 · Control in Cyber-Physical Systems (CPCS) · MATLAB · with António Canteiro and Rafael Louro</p>
+  <dl class="facts">
+    <dt>Satellite</dt>
+    <dd>Attitude control of a rigid-body satellite, with orientation on SO(3) and torque as input: a
+      nonlinear model-predictive controller for the unconstrained manoeuvre and again with constraints.</dd>
+    <dt>Tractor</dt>
+    <dd>Automating a tractor that tows a sprayer through an olive orchard, in three steps: drive to a
+      point, follow a row despite terrain disturbances, then plan and carry out the whole spraying job,
+      delivering 8 ml to every tree within reach while minimising cost per hectare and respecting tank
+      capacity and tree collisions.</dd>
+  </dl>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/CPCS_Proj2">Satellite project on GitHub</a></li>
+  </ul>
+
+  <h3>A ground vehicle that avoids obstacles and detects its own faults</h3>
+  <p class="meta">2025 · Decision Systems (SDC) · MATLAB</p>
+  <p>A decision system for a ground vehicle, built in three iterations: a double-integrator model with
+    an A* path smoothed by splines, a controller and a fault-detection observer; then the nonlinear
+    vehicle model handled by feedback linearisation; then an optimised version of the whole chain.</p>
+
+  <h3>An open, solar-powered soil sensor</h3>
+  <p class="meta">2025 · SAD course project · <span class="status">design proposal</span></p>
+  <!-- TODO: check the course's English name and whether the node was built or only proposed. -->
+  <p>A low-cost, solar-powered soil-monitoring node that reports over LoRa, designed with open hardware
+    and software as an alternative to commercial sensors costing around €300 each plus a yearly fee.</p>
+
+  <h3>Real-time systems: conveyor, warehouse and car wash</h3>
+  <p class="meta">2023 · Real-Time Systems (STR) · C++, FreeRTOS, Java</p>
+  <p>Three lab projects against simulated industrial plants: a splitter conveyor controlled by FreeRTOS
+    tasks with events, queues and shared-resource locking; an automated pallet storage system written in
+    Java; and a car-wash service manager in C++.</p>
+
+  <h3>Conway's Game of Life in 8086 assembly</h3>
+  <p class="meta">2022 · Microprocessors · x86 assembly (8086), DOS, VGA mode 13h · with Diogo Novais</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>The full game, written in about 2 800 lines of 8086 assembly with BIOS and DOS interrupts:
+      a mouse-driven main menu, a grid you draw live cells on with the mouse, and a generation and
+      live-cell counter in the header. Games can be saved and loaded as <code>.gam</code> files,
+      every run is logged with the player's name, date and time, and a top-5 table ranks the best
+      runs.</dd>
+    <dt>How</dt>
+    <dd>The screen runs in 320×200 VGA mode; each cell is a 2×2-pixel block, and the next
+      generation is computed from the pixels on screen into a 15 200-byte buffer (160×95 cells) before
+      it is drawn. A run ends when every cell dies or at generation 999. File handling, string
+      formatting, number conversion and input are all hand-written routines.</dd>
+  </dl>
+  <figure>
+    <img src="assets/conway-flow.png" width="1060" height="515" loading="lazy"
+         alt="Flowchart of the program: a main menu with Play, Save, Load, Top 5, Credits and Leave. Play asks for a player name, lets the player draw cells and runs generations until no cells are left or generation 999, then writes the log and updates the top 5 if needed. Save and Load read and write .gam files.">
+    <figcaption>How the program flows, from the project's design.</figcaption>
+  </figure>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/LearnAssembly8086">Code on GitHub</a> (<code>Conway game of life.asm</code>, with smaller assembly exercises)</li>
+  </ul>
+
+  <!-- ============================================================ -->
+  <h2 id="odin">Web · 2022</h2>
+  <h3>The Odin Project</h3>
+  <p class="meta">Summer 2022 · HTML, CSS, JavaScript</p>
+  <p>My first web projects, from The Odin Project's Foundations course, built over a summer.
+    The four with a live version open straight in the browser.</p>
+  <ul>
+    <li><strong>Rock Paper Scissors</strong>, styled after Card-Jitsu from Club Penguin.
+      <a href="https://filipe-cavalheiro.github.io/Odin-rock_paper_scissors/">Play</a> ·
+      <a href="https://github.com/Filipe-Cavalheiro/Odin-rock_paper_scissors">code</a></li>
+    <li><strong>Etch-A-Sketch</strong>: a sketchpad drawn on a grid of divs.
+      <a href="https://filipe-cavalheiro.github.io/Odin-Etch-A-Sketch/">Draw</a> ·
+      <a href="https://github.com/Filipe-Cavalheiro/Odin-Etch-A-Sketch">code</a></li>
+    <li><strong>Calculator</strong>: a simple calculator in plain JavaScript.
+      <a href="https://github.com/Filipe-Cavalheiro/Odin-calculater">code</a></li>
+    <li><strong>Landing page</strong>: a layout from a design, in HTML and Flexbox.
+      <a href="https://filipe-cavalheiro.github.io/Odin-landingPage/">View</a> ·
+      <a href="https://github.com/Filipe-Cavalheiro/Odin-landingPage">code</a></li>
+    <li><strong>Recipes</strong>: a first multi-page HTML site.
+      <a href="https://filipe-cavalheiro.github.io/Odin-recipes/">View</a> ·
+      <a href="https://github.com/Filipe-Cavalheiro/Odin-recipes">code</a></li>
+    <li>The course exercises (HTML, CSS and JavaScript) are collected in
+      <a href="https://github.com/Filipe-Cavalheiro/OdinProject">OdinProject</a>.</li>
+  </ul>
 
   <!-- ============================================================ -->
   <h2 id="smaller">Smaller things</h2>
@@ -232,7 +332,6 @@
     <li><a href="https://github.com/Filipe-Cavalheiro/FreeRTOS">FreeRTOS</a> (2023): small projects with FreeRTOS.</li>
     <li><a href="https://github.com/Filipe-Cavalheiro/path-finding-in-C">Path finding</a> and
         <a href="https://github.com/Filipe-Cavalheiro/Data-structures-in-C">data structures</a> in C (2023).</li>
-    <li><a href="https://github.com/Filipe-Cavalheiro/LearnAssembly8086">LearnAssembly8086</a> (2022): learning x86 assembly.</li>
     <li>Arduino sketches: UART by polling and by interrupts, an ultrasonic sensor, a load cell.</li>
     <li>MATLAB sketches of vector-field path following: converging onto and circulating around lines, circles, shapes and splines, in 2D and 3D.</li>
   </ul>
