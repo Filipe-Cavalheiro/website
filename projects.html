@@ -185,7 +185,15 @@
   <p class="meta">2025 · SAD course project · <span class="status">design proposal</span></p>
   <!-- TODO: check the course's English name and whether the node was built or only proposed. -->
   <p>A low-cost, solar-powered soil-monitoring node that reports over LoRa, designed with open hardware
-    and software as an alternative to commercial sensors costing around €300 each plus a yearly fee.</p>
+    and software as an alternative to commercial sensors costing around €300 each plus a yearly fee.
+    A solar panel feeds an LM2596S buck converter and a TP4056 charger for four 18650 cells; an MT3608
+    boost converter powers an ESP32, which reads an RS485 soil sensor through an RS485-to-TTL converter
+    and sends the readings over a LoRa module.</p>
+  <figure>
+    <a href="assets/soil-sensor-circuit.png"><img src="assets/soil-sensor-circuit.png" width="713" height="420" loading="lazy"
+         alt="Block diagram: solar panel to LM2596S to TP4056, which charges four 18650 batteries and feeds an MT3608; the MT3608 powers an ESP32, which is wired to a soil sensor through an RS485-to-TTL converter and to a LoRa module."></a>
+    <figcaption>How the node is wired, from the solar panel to the LoRa radio.</figcaption>
+  </figure>
 
   <h3 id="px4">PX4: fixed-wing aerodynamics and parameter tools</h3>
   <p class="meta">2024 – 2025 · Python · PX4, Gazebo, AVL</p>
