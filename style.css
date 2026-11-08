@@ -144,6 +144,7 @@ figure img {
   background: var(--paper);
   border-radius: 3px;
 }
+img.badge { max-width: 100%; height: auto; vertical-align: middle; }
 figure.narrow img { max-width: 26rem; margin: 0 auto; }
 figcaption { font-family: var(--sans); font-size: .8rem; color: var(--muted); margin-top: .5rem; }
 
