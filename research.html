@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research · Filipe Cavalheiro</title>
+<meta name="description" content="Papers and M.Sc. thesis by Filipe Cavalheiro on drone-swarm encirclement and fixed-wing UAV simulation.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23b8360f'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="name" href="index.html">Filipe Cavalheiro</a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" aria-current="page">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <h1>Research</h1>
+  <p class="lede">One question runs through all of it: how can a group of drones deal with a drone that
+    should not be there without destroying it?</p>
+  <p>A swarm that surrounds an intruder on all sides forms a visible barrier. It tells the operator
+    that the airspace is restricted and encourages the drone to leave. Making that work means placing
+    the drones evenly on a sphere around a moving target, steering them there with provable stability,
+    and keeping them from colliding on the way. The fixed-wing work came first: building a drone and a
+    simulator that can be trusted.</p>
+  <p class="muted">Supervisor: Bruno J. Guerreiro. Affiliations: Dep. of Electrical and Computer Engineering,
+    CTS-Uninova and LASI, NOVA School of Science and Technology.</p>
+
+  <ol class="toc">
+    <li><a href="#thesis">M.Sc. thesis (2026)</a></li>
+    <li><a href="#apca2026">APCA CONTROLO 2026</a></li>
+    <li><a href="#yefece2025">YEF-ECE 2025</a></li>
+    <li><a href="#wip">In preparation</a></li>
+  </ol>
+
+  <!-- ============================================================ -->
+  <h2 id="thesis">M.Sc. thesis</h2>
+  <h3>Cooperative Encirclement of Non-Cooperative Drones</h3>
+  <!-- TODO: confirm submission/defence date and add a link to the final PDF (e.g. RUN repository) once it is public. -->
+  <p class="meta">2026 · M.Sc. in Electrical and Computer Engineering · NOVA FCT · adviser Bruno Guerreiro</p>
+
+  <blockquote class="abstract">
+    <p>The growing popularity of drones has been accompanied by a rising number of unintentional
+    incursions into restricted airspace, with documented disruptions to airports and other critical
+    infrastructure. This thesis proposes a non-destructive response: a swarm of drones that encircles
+    an intruding, non-cooperative target and forms a visible barrier, signalling to its operator that
+    the airspace is restricted and encouraging the target to leave. Here, non-cooperative means that
+    the target shares no control objective with the pursuers; it is not modelled as an adversary.</p>
+    <p>Most existing encirclement methods are planar or define encirclement as convex containment. This
+    work addresses the fully three-dimensional case, where agents must be distributed evenly around the
+    target so that no direction is left uncovered. Three architectures are developed in increasing
+    generality. First, a centralized approach places agents on the two-sphere using a Fibonacci lattice
+    and steers them with a Lyapunov-based geometric controller, with a Mellinger controller for low-level
+    tracking. Second, a decentralized approach lets agents estimate the target position by consensus over
+    a spatial network and redistribute themselves through Lloyd's algorithm on Voronoi cells, with
+    convex-hull and half-plane implementations. Third, the formation is generalized to arbitrary surface
+    meshes, including a velocity-weighted variant and a barrier configuration, and trajectory generation
+    is replaced by a Bernstein-polynomial model predictive control (MPC) with velocity, acceleration and
+    collision constraints.</p>
+    <p>Simulations with up to 31 agents, static and moving targets, and the mid-flight loss of several
+    agents show that the formations converge and reform around the target, and that inter-agent
+    distances stay above a safety threshold for almost the whole simulation. Comparisons of
+    point-distribution, path-planning and collision-avoidance methods are also reported. To the author's
+    knowledge, this specific combination of surface-based formation generation, decentralized geometric
+    redistribution and trajectory-level collision avoidance for a moving target has not been
+    systematically studied in the reviewed literature.</p>
+  </blockquote>
+  <ul class="tags" aria-label="Keywords">
+    <li>multi-UAV encirclement</li><li>formation control</li><li>Lyapunov-based control</li>
+    <li>model predictive control</li><li>collision avoidance</li><li>Voronoi / Lloyd</li><li>path planning</li>
+  </ul>
+
+  <!-- ============================================================ -->
+  <h2 id="apca2026">Conference paper · 2026</h2>
+  <h3>Hierarchical Nonlinear Control for Swarm Encirclement Around a Moving Target UAV</h3>
+  <p class="meta">F. Cavalheiro, B. J. Guerreiro · 17th APCA International Conference on Automatic Control and Soft Computing (CONTROLO 2026) · <span class="status">accepted</span></p>
+
+  <blockquote class="abstract">
+    <p>This paper presents a hierarchical inner-outer loop nonlinear control strategy using a geometric
+    Lyapunov-based framework for the cooperative encirclement of a target by multiple unmanned aerial
+    vehicles (UAVs) in three-dimensional space. The encirclement problem is formulated on a two-sphere
+    with arbitrary radius and center, denoted Γ², by projecting agent positions from ℝ³ onto a
+    spherical manifold centered at the target, being the unit two-sphere at the origin 𝕊² used for
+    intermediate calculations. Desired encirclement configurations are generated via a point separation
+    method on Γ², while stable convergence from ℝ³ to these points is guaranteed using a Lyapunov-based
+    reduced-attitude control law inspired by geometric control on the two-sphere. Formal stability results
+    are derived using Lyapunov analysis and the framework is validated in simulation using a nonlinear
+    quadrotor model and controller. Results demonstrate stable encirclement and highlight the suitability
+    of the proposed approach for three-dimensional multi-agent aerial systems.</p>
+  </blockquote>
+
+  <dl class="facts">
+    <dt>In plain words</dt>
+    <dd>Each chaser drone's position relative to the target is split into a distance and a direction.
+      The desired directions come from a Fibonacci lattice, which spreads any number of points evenly
+      over a sphere. A geometric controller slides each drone's direction along the great circle towards
+      its point, a potential-field safeguard pushes references apart when two drones get too close, and
+      a radial law brings the distance to the desired radius, faster once the direction is right.
+      A nonlinear inner loop turns this into thrust and torques for each quadrotor.</dd>
+    <dt>Result</dt>
+    <dd>With three drones the formation converges to an equilateral triangle; with thirty-one drones
+      (465 pairs) the inter-agent distances stay above the safety threshold while the swarm surrounds a
+      target that moves and then stops. The desired direction is almost globally asymptotically stable.</dd>
+    <dt>Code</dt>
+    <dd>MATLAB and Python simulations and a Crazyflie experiment (Lighthouse tracking), open source under AGPL.</dd>
+  </dl>
+
+  <figure>
+    <img src="assets/apca-31-agents.png" width="645" height="643" loading="lazy"
+         alt="3D plot of 31 coloured drone paths starting far apart and converging onto diamond-marked points on a small sphere around the target.">
+    <figcaption>Thirty-one simulated quadrotors converge onto their Fibonacci-lattice points around the target. Figure from the paper.</figcaption>
+  </figure>
+
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/Hierarchical-Nonlinear-Control-for-Swarm-Encirclement-Around-a-Moving-Target-UAV">Code on GitHub</a></li>
+    <!-- TODO: add the arXiv link once submitted (package ready in Papers/2026-APCA [ACCEPTED]/ARXIV/). -->
+    <!-- TODO: add the IEEE Xplore DOI once the proceedings are published. -->
+    <!-- TODO: add the YouTube explainer video link once uploaded (video rendered in YOUTUBE_VIDEO/output/). -->
+    <li><span class="muted">arXiv preprint, DOI and explainer video: coming soon</span></li>
+  </ul>
+
+  <!-- ============================================================ -->
+  <h2 id="yefece2025">Conference paper · 2025</h2>
+  <h3>Fixed-Wing UAV Simulation in PX4 and Gazebo: An AVL-Based Approach</h3>
+  <p class="meta">F. S. Cavalheiro, B. J. Guerreiro · 2025 9th International Young Engineers Forum on Electrical and Computer Engineering (YEF-ECE) · <span class="status">accepted</span></p>
+
+  <blockquote class="abstract">
+    <p>This paper presents a methodology for accurately modeling and simulating fixed-wing UAVs in the
+    PX4 and Gazebo environments using aerodynamic data derived from the Athena Vortex Lattice (AVL)
+    method. We introduce an automated pipeline that extracts aerodynamic coefficients from a user-defined
+    YAML file, executes AVL, and parses its output into a physics-compatible .sdf file for Gazebo. The
+    system supports advanced configurations such as partial-span control surfaces and hinge positioning.
+    Additionally, a two-way parameter synchronization framework bridges discrepancies between PX4 and
+    Gazebo, ensuring simulation fidelity. This approach simplifies deployment of autonomous flight
+    algorithms in simulation.</p>
+  </blockquote>
+
+  <dl class="facts">
+    <dt>The aircraft</dt>
+    <dd>An EasyGlider 4 with a Pixhawk 6C Mini flight controller and a Raspberry Pi Zero 2W companion
+      computer, in a 3D-printed component housing I modelled in Onshape.</dd>
+    <dt>The pipeline</dt>
+    <dd>Describe the wing in a YAML file, run AVL automatically, and get a Gazebo SDF model with the
+      aerodynamic coefficients filled in. PX4 parameters are kept in sync between QGroundControl and
+      Gazebo in both directions, so the simulated drone is configured like the real one.</dd>
+    <dt>Flights</dt>
+    <dd>Autonomous waypoint missions flown first in simulation and then with the real aircraft,
+      and compared.</dd>
+    <dt>Software</dt>
+    <dd>PX4, Gazebo, MAVSDK, QGroundControl, AVL (M. Drela, MIT).</dd>
+  </dl>
+
+  <figure>
+    <img src="assets/yef-hardware.jpg" width="1100" height="778" loading="lazy"
+         alt="CAD render of the EasyGlider 4 fuselage, seen through, with the battery, flight controller and a 3D-printed tray holding the Raspberry Pi inside the nose.">
+    <figcaption>Component layout inside the EasyGlider 4. Figure from the paper.</figcaption>
+  </figure>
+  <figure class="narrow">
+    <img src="assets/yef-real-flight.jpg" width="513" height="422" loading="lazy"
+         alt="Satellite view of an airfield with coloured lines tracing the real aircraft's flight path in loops over the runway.">
+    <figcaption>Path of the real autonomous flight over the airfield. Figure from the paper.</figcaption>
+  </figure>
+
+  <ul class="links">
+    <li><a href="https://youtu.be/vL8qdegYdg8">Real flight video</a></li>
+    <li><a href="https://review.px4.io/plot_app?log=5fa8bf6d-1fe3-4516-839d-842656a503de">Real flight log</a> ·
+        <a href="https://review.px4.io/plot_app?log=fed48ea1-f598-4777-b09f-9c5ba3b872af">simulated flight log</a></li>
+    <li><a href="https://github.com/PX4/PX4-gazebo-models/pull/79">AVL automation enhancements, pull request to PX4-gazebo-models</a> (open)</li>
+    <li><a href="https://github.com/PX4/PX4-Autopilot/pull/24373">QGC → Gazebo</a> and
+        <a href="https://github.com/PX4/PX4-Autopilot/pull/24374">Gazebo → QGC</a> parameter tools, pull requests to PX4-Autopilot (closed)</li>
+    <!-- TODO: add the proceedings / IEEE Xplore DOI and the arXiv link when available. -->
+    <!-- TODO: add the YouTube explainer video link once uploaded (draft in Papers/2025-YEF-ECE[ACCEPTED]/YOUTUBE_VIDEO/). -->
+    <li><span class="muted">DOI, arXiv preprint and explainer video: coming soon</span></li>
+  </ul>
+  <p class="muted">Thanks to José Tojeira for flight operations and to UNINOVA for the laboratory facilities.
+    Funded by FCT through CTS (UIDP/00066/2020, UIDB/00066/2020) and CAPTURE
+    (<a href="https://doi.org/10.54499/PTDC/EEI-AUT/1732/2020">PTDC/EEI-AUT/1732/2020</a>).</p>
+
+  <!-- ============================================================ -->
+  <h2 id="wip">In preparation</h2>
+  <h3>Journal paper on restricted-airspace deterrence</h3>
+  <p class="meta">2026 · <span class="status">in preparation</span></p>
+  <p>Extending the thesis towards non-destructive deterrence of drone intrusions into restricted
+    airspace with swarm formations. More here once it is submitted.</p>
+</main>
+
+<footer class="site-foot">
+  <ul>
+    <li><a href="mailto:cavalheirofilipe@gmail.com">Email</a></li>
+    <li><a href="https://linkedin.com/in/filipe-cavalheiro">LinkedIn</a></li>
+    <li><a href="https://github.com/Filipe-Cavalheiro">GitHub</a></li>
+  </ul>
+</footer>
+</div>
+</body>
+</html>
