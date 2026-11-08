@@ -34,7 +34,3 @@ grep -n "TODO" *.html
 
 Published with GitHub Pages from `main`, folder `/ (root)`:
 **https://filipe-cavalheiro.github.io/website/**
-
-Every push to `main` redeploys it within a minute or two. All links between pages are relative, so
-the same files also work under `https://filipe-cavalheiro.github.io/` if they are ever moved to a
-repository named `Filipe-Cavalheiro.github.io`.
