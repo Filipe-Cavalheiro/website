@@ -22,14 +22,6 @@ Open `index.html` in a browser, or serve the folder:
 python3 -m http.server 8000   # then open http://localhost:8000
 ```
 
-## Things to confirm
-
-Facts that need your confirmation are marked in the HTML with `<!-- TODO: ... -->`:
-
-```bash
-grep -n "TODO" *.html
-```
-
 ## Live site
 
 Published with GitHub Pages from `main`, folder `/ (root)`:
