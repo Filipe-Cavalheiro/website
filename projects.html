@@ -7,6 +7,7 @@
 <meta name="description" content="Projects by Filipe Cavalheiro: embedded systems, rocket air brakes, a guitar-playing robot, OpenGL mapping, C terminal apps, open-source contributions, 3D printing, university projects such as Conway's Game of Life in 8086 assembly, and first web projects.">
 <meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="style.css">
+<script src="gallery.js" defer></script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='5' fill='%23b8360f'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -126,9 +127,23 @@
       Two versions of the screen layout were tuned: solo and duel.</dd>
   </dl>
   <figure>
-    <img src="assets/neecathon-servo.jpg" width="900" height="675" loading="lazy"
-         alt="Close-up of a small blue servo motor zip-tied to the neck of a black guitar game controller decorated with flames.">
-    <figcaption>One of the servos on the guitar controller.</figcaption>
+    <div class="gallery">
+      <a href="assets/neecathon-servo.jpg" data-caption="One of the servos on the guitar controller."><img src="assets/neecathon-servo.jpg" width="900" height="675" loading="lazy" alt="Close-up of a small blue servo motor zip-tied to the neck of a black guitar game controller decorated with flames."></a>
+      <a href="assets/gallery/hackathon/hackathon-01.jpg"><img src="assets/gallery/hackathon/hackathon-01-thumb.jpg" width="480" height="640" loading="lazy" alt="Someone seated in the hackathon room with the guitar controller and its servo rig in their hands."></a>
+      <a href="assets/gallery/hackathon/hackathon-02.jpg"><img src="assets/gallery/hackathon/hackathon-02-thumb.jpg" width="480" height="640" loading="lazy" alt="The team table: a laptop running the rhythm game among helmets, cables and parts."></a>
+      <a href="assets/gallery/hackathon/hackathon-03.jpg"><img src="assets/gallery/hackathon/hackathon-03-thumb.jpg" width="480" height="640" loading="lazy" alt="Close-up of the ESP32 board with its red power LED and coloured jumper wires."></a>
+      <a href="assets/gallery/hackathon/hackathon-04.jpg"><img src="assets/gallery/hackathon/hackathon-04-thumb.jpg" width="480" height="360" loading="lazy" alt="The flame-decorated guitar controller on a lap, a servo on the strum bar and a breadboard beside it."></a>
+      <a href="assets/gallery/hackathon/hackathon-05.jpg"><img src="assets/gallery/hackathon/hackathon-05-thumb.jpg" width="480" height="360" loading="lazy" alt="The wooden frame that holds the fret servos over the controller, wired to a breadboard."></a>
+      <a href="assets/gallery/hackathon/hackathon-07.jpg"><img src="assets/gallery/hackathon/hackathon-07-thumb.jpg" width="480" height="360" loading="lazy" alt="The wooden servo frame standing on the table, with coloured labels for the five frets."></a>
+      <a href="assets/gallery/hackathon/hackathon-08.jpg"><img src="assets/gallery/hackathon/hackathon-08-thumb.jpg" width="480" height="360" loading="lazy" alt="Two laptops and the electronics spread over the hackathon table."></a>
+      <a href="assets/gallery/hackathon/hackathon-video-1.mp4" data-type="video" data-caption="Video, 29 s: the rig and the table during the hackathon."><img src="assets/gallery/hackathon/hackathon-video-1-thumb.jpg" width="480" height="854" loading="lazy" alt="Video, 29 s: the rig and the table during the hackathon."></a>
+      <a href="assets/gallery/hackathon/hackathon-video-2.mp4" data-type="video" data-caption="Video, 36 s: the game running on the laptop next to the rig."><img src="assets/gallery/hackathon/hackathon-video-2-thumb.jpg" width="480" height="270" loading="lazy" alt="Video, 36 s: the game running on the laptop next to the rig."></a>
+      <a href="assets/gallery/hackathon/hackathon-video-3.mp4" data-type="video" data-caption="Video, 21 s: the laptop and the guitar rig on the table."><img src="assets/gallery/hackathon/hackathon-video-3-thumb.jpg" width="480" height="268" loading="lazy" alt="Video, 21 s: the laptop and the guitar rig on the table."></a>
+      <a href="assets/gallery/hackathon/hackathon-video-4.mp4" data-type="video" data-caption="Video, 17 s: the servo frame and wiring on the workbench."><img src="assets/gallery/hackathon/hackathon-video-4-thumb.jpg" width="480" height="854" loading="lazy" alt="Video, 17 s: the servo frame and wiring on the workbench."></a>
+      <a href="assets/gallery/hackathon/hackathon-video-5.mp4" data-type="video" data-caption="Video, 17 s: the guitar controller with the servos mounted."><img src="assets/gallery/hackathon/hackathon-video-5-thumb.jpg" width="480" height="854" loading="lazy" alt="Video, 17 s: the guitar controller with the servos mounted."></a>
+      <a href="assets/gallery/hackathon/hackathon-video-6.mp4" data-type="video" data-caption="Video, 39 s: the robot playing, with the game on screen."><img src="assets/gallery/hackathon/hackathon-video-6-thumb.jpg" width="480" height="854" loading="lazy" alt="Video, 39 s: the robot playing, with the game on screen."></a>
+    </div>
+    <figcaption>Photos and videos from the hackathon. Select one to open it.</figcaption>
   </figure>
 
   <!-- ============================================================ -->
@@ -154,6 +169,11 @@
     <dt>Hardware</dt>
     <dd>The air-brake mechanism was modelled and 3D-printed.</dd>
   </dl>
+  <figure class="narrow">
+    <img src="assets/air-brakes.jpg" width="1200" height="1600" loading="lazy"
+         alt="A green 3D-printed hub with four curved slots and four black air-brake fins around it, on a table next to the orange frame of a 3D printer.">
+    <figcaption>The 3D-printed air-brake mechanism: four fins around a green hub.</figcaption>
+  </figure>
   <ul class="links">
     <li><a href="https://github.com/Filipe-Cavalheiro/OR-airbrakes-Plugin">OR-airbrakes-Plugin</a></li>
     <li><a href="https://github.com/Filipe-Cavalheiro/AirBrakes-Arduino">AirBrakes-Arduino</a></li>
@@ -218,6 +238,14 @@
   <p>The graphics side of the car project and a few half-finished experiments around it: a C++
     rewrite of the mapping viewer with its own serial-communication class and shaders for the grid,
     the car and the obstacle cubes, a robot arm and SLAM-style mapping.</p>
+  <figure>
+    <div class="gallery">
+      <a href="assets/gallery/opengl/opengl-01.jpg"><img src="assets/gallery/opengl/opengl-01-thumb.jpg" width="480" height="270" loading="lazy" alt="An orange cube lit by a white cube that stands in for the light source."></a>
+      <a href="assets/gallery/opengl/opengl-02.jpg"><img src="assets/gallery/opengl/opengl-02-thumb.jpg" width="480" height="270" loading="lazy" alt="A triangle with red, green and blue corners blending into each other."></a>
+      <a href="assets/gallery/opengl/opengl-video-1.mp4" data-type="video" data-caption="Video, 7 s: a cube lit by a light whose colour changes over time."><img src="assets/gallery/opengl/opengl-video-1-thumb.jpg" width="480" height="266" loading="lazy" alt="Video, 7 s: a cube lit by a light whose colour changes over time."></a>
+    </div>
+    <figcaption>Following the LearnOpenGL tutorial.</figcaption>
+  </figure>
   <ul class="links">
     <li><a href="https://github.com/Filipe-Cavalheiro/openGL-Environment">openGL-Environment</a></li>
   </ul>
@@ -254,33 +282,94 @@
     <li><a href="https://github.com/Filipe-Cavalheiro/TAPDI">Code on GitHub</a> (with the course's practical assignments)</li>
   </ul>
 
-  <h3>Nonlinear MPC: a satellite and an orchard tractor</h3>
-  <p class="meta">2025 · Control in Cyber-Physical Systems (CPCS) · MATLAB · with António Canteiro and Rafael Louro</p>
+  <h3 id="tractor">An autonomous sprayer for an olive orchard</h3>
+  <p class="meta">2025 · Control in Cyber-Physical Systems (CPCS), project I · MATLAB · with António Canteiro and Rafael Louro</p>
   <dl class="facts">
-    <dt>Satellite</dt>
-    <dd>Attitude control of a rigid-body satellite, with orientation on SO(3) and torque as input: a
-      nonlinear model-predictive controller for the unconstrained manoeuvre and again with constraints.</dd>
-    <dt>Tractor</dt>
-    <dd>Automating a tractor that tows a sprayer through an olive orchard, in three steps: drive to a
-      point, follow a row despite terrain disturbances, then plan and carry out the whole spraying job,
-      delivering 8 ml to every tree within reach while minimising cost per hectare and respecting tank
-      capacity and tree collisions.</dd>
+    <dt>What</dt>
+    <dd>Automating a tractor that tows a sprayer through an olive orchard, in three steps of rising
+      difficulty: drive to a point, follow a row despite terrain disturbances, then carry out the whole
+      spraying job, delivering 8 ml to every tree within reach while keeping the cost per hectare low and
+      staying clear of the trees.</dd>
+    <dt>How</dt>
+    <dd>The tractor is a nonlinear kinematic model with a towed trailer. The first step uses a linear
+      model-predictive controller; the full job uses a Lyapunov-based backstepping controller that
+      follows waypoints laid out between the rows at 40 km/h, with tractor and trailer integrated with
+      <code>ode45</code>. The spray is a half-disc behind the trailer, and its overlap with each tree's
+      canopy, integrated over time, gives the dose each tree received.</dd>
   </dl>
+  <figure>
+    <div class="gallery">
+      <a href="assets/gallery/matlab/tractor.mp4" data-type="video" data-caption="Simulation: tractor, hitch, trailer and spray area (blue) moving through the rows."><img src="assets/gallery/matlab/tractor-video-thumb.jpg" width="480" height="500" loading="lazy" alt="Animation: the tractor, drawn as a circle, tows the sprayer down the rows of olive trees; the blue half-disc behind the trailer is the spray."></a>
+      <a href="assets/gallery/matlab/tractor-path.png" data-caption="The whole run: reference (thin line) and the path the tractor followed (red)."><img src="assets/gallery/matlab/tractor-path-thumb.jpg" width="480" height="490" loading="lazy" alt="Plot of the tractor path among twelve olive trees drawn as circles: the red path follows the reference between the rows, swinging wide at each turn."></a>
+    </div>
+    <figcaption>Re-run in MATLAB R2024a for this page.</figcaption>
+  </figure>
+
+  <h3>Satellite attitude control with nonlinear MPC</h3>
+  <p class="meta">2025 · Control in Cyber-Physical Systems (CPCS), project II · MATLAB · with António Canteiro and Rafael Louro</p>
+  <p>Attitude control of a rigid-body satellite, with orientation on SO(3) and torque as input: a
+    nonlinear model-predictive controller for the unconstrained manoeuvre and again with constraints.</p>
   <ul class="links">
-    <li><a href="https://github.com/Filipe-Cavalheiro/CPCS_Proj2">Satellite project on GitHub</a></li>
+    <li><a href="https://github.com/Filipe-Cavalheiro/CPCS_Proj2">Code and report on GitHub</a></li>
   </ul>
 
-  <h3>A ground vehicle that avoids obstacles and detects its own faults</h3>
-  <p class="meta">2025 · Decision Systems (SDC) · MATLAB</p>
-  <p>A decision system for a ground vehicle, built in three iterations: a double-integrator model with
-    an A* path smoothed by splines, a controller and a fault-detection observer; then the nonlinear
-    vehicle model handled by feedback linearisation; then an optimised version of the whole chain.</p>
+  <h3 id="astar">A ground vehicle that avoids obstacles and detects its own faults</h3>
+  <p class="meta">2025 · Decision Systems (SDC) · MATLAB · A*, Kalman filter, set-valued observers</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>A decision system for a ground vehicle, built in three iterations: a double-integrator model with
+      an A* path smoothed by splines, a controller and a fault-detection observer; then the nonlinear
+      vehicle model handled by feedback linearisation; then an optimised version of the whole chain.</dd>
+    <dt>How</dt>
+    <dd>The map is a 20 × 20 grid. At every step A* plans a path to the target around an obstacle whose
+      keep-out zone grows with how unsure the vehicle is of its own position; cubic splines turn the
+      grid path into a smooth reference, which a pole-placement controller follows. A Kalman filter
+      estimates the state, and a set-valued observer built on constrained zonotopes bounds every
+      position the vehicle could be in: if that set collapses, the measurements no longer fit the model
+      and a fault is reported.</dd>
+  </dl>
+  <figure>
+    <div class="gallery">
+      <a href="assets/gallery/matlab/astar.mp4" data-type="video" data-caption="Simulation: the path is re-planned at every step around the obstacle, which grows with the uncertainty of the position estimate."><img src="assets/gallery/matlab/astar-video-thumb.jpg" width="480" height="480" loading="lazy" alt="Animation: the vehicle drives from the start to the target around an elliptical obstacle, with the planned path redrawn at every step."></a>
+      <a href="assets/gallery/matlab/astar-path.png" data-caption="The finished run: blocked grid cells (red), the vehicle positions (circles) and the last set-valued estimate (box)."><img src="assets/gallery/matlab/astar-path-thumb.jpg" width="480" height="492" loading="lazy" alt="Plot of the final run: the obstacle as a blue ellipse surrounded by red grid points marked as blocked, the planned path and the vehicle positions going around it to the target, and a box showing the set of possible positions."></a>
+    </div>
+    <figcaption>Re-run in MATLAB R2024a for this page, with the start and target fixed instead of picked with the mouse.</figcaption>
+  </figure>
 
   <h3>An open, solar-powered soil sensor</h3>
   <p class="meta">2025 · SAD course project · <span class="status">design proposal</span></p>
   <!-- TODO: check the course's English name and whether the node was built or only proposed. -->
   <p>A low-cost, solar-powered soil-monitoring node that reports over LoRa, designed with open hardware
     and software as an alternative to commercial sensors costing around €300 each plus a yearly fee.</p>
+
+  <h3 id="road-signs">Road-sign recognition with hand-written image processing</h3>
+  <p class="meta">2024 · Sensor Systems (SS) · C#, Emgu CV · with Diogo Novais</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>A Windows program that finds traffic signs in a photo, tells warning triangles from round signs
+      and reads the number on speed-limit signs. The image processing is written by hand, working
+      directly on the pixel buffer; the library is used to hold the images.</dd>
+    <dt>How</dt>
+    <dd>The image goes to HSV and a red filter keeps the sign borders; connected-component labelling
+      separates the blobs, small ones are dropped, and each blob's bounding box and circularity say
+      what shape it is. Inside a round sign a black filter isolates the digits, which are compared
+      with reference digits to read the limit.</dd>
+  </dl>
+  <figure>
+    <div class="gallery">
+      <a href="assets/gallery/road-signs/road-signs-01.jpg"><img src="assets/gallery/road-signs/road-signs-01-thumb.jpg" width="480" height="854" loading="lazy" alt="The program on a photo with a 50 km/h sign: the cropped sign and its digits shown above a table of results."></a>
+      <a href="assets/gallery/road-signs/road-signs-02.jpg"><img src="assets/gallery/road-signs/road-signs-02-thumb.jpg" width="480" height="854" loading="lazy" alt="A road photo with a dangerous-curve sign above a no-overtaking sign, loaded in the program."></a>
+      <a href="assets/gallery/road-signs/road-signs-03.jpg"><img src="assets/gallery/road-signs/road-signs-03-thumb.jpg" width="480" height="854" loading="lazy" alt="A 50 km/h sign after segmentation, with the regions found around its digits."></a>
+      <a href="assets/gallery/road-signs/road-signs-04.jpg"><img src="assets/gallery/road-signs/road-signs-04-thumb.jpg" width="480" height="854" loading="lazy" alt="Output of the red filter: a warning triangle and a round sign isolated from the background."></a>
+      <a href="assets/gallery/road-signs/road-signs-05.jpg"><img src="assets/gallery/road-signs/road-signs-05-thumb.jpg" width="480" height="854" loading="lazy" alt="Output of the red filter on a warning triangle."></a>
+      <a href="assets/gallery/road-signs/road-signs-06.jpg"><img src="assets/gallery/road-signs/road-signs-06-thumb.jpg" width="480" height="854" loading="lazy" alt="A 40 km/h sign with boxes around the detected digits."></a>
+      <a href="assets/gallery/road-signs/road-signs-07.jpg"><img src="assets/gallery/road-signs/road-signs-07-thumb.jpg" width="480" height="854" loading="lazy" alt="A 50 km/h sign next to its red ring as seen by the filter."></a>
+    </div>
+    <figcaption>Screens of the program at work.</figcaption>
+  </figure>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/Road-Sign-Detection">Code on GitHub</a></li>
+  </ul>
 
   <h3>Real-time systems: conveyor, warehouse and car wash</h3>
   <p class="meta">2023 · Real-Time Systems (STR) · C++, FreeRTOS, Java</p>
@@ -351,7 +440,6 @@
   <h2 id="smaller">Smaller things</h2>
   <ul>
     <li><a href="https://github.com/Filipe-Cavalheiro/DTSD">DTSD</a> (2025): an ESP32 reading several sensors, storing the data in Firebase and showing it in a Flutter Android app.</li>
-    <li><a href="https://github.com/Filipe-Cavalheiro/Road-Sign-Detection">Road-Sign-Detection</a> (2024, C#): detecting road signs without OpenCV.</li>
     <li><a href="https://github.com/Filipe-Cavalheiro/FreeRTOS">FreeRTOS</a> (2023): small projects with FreeRTOS.</li>
     <li><a href="https://github.com/Filipe-Cavalheiro/path-finding-in-C">Path finding</a> and
         <a href="https://github.com/Filipe-Cavalheiro/Data-structures-in-C">data structures</a> in C (2023).</li>
