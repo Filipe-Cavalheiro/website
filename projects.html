@@ -146,6 +146,49 @@
     <li><a href="https://github.com/Filipe-Cavalheiro/autonomous-orchard-sprayer">Code and report on GitHub</a></li>
   </ul>
 
+  <h3 id="coppeliasim">A simulated car you can drive, or that drives and parks itself</h3>
+  <p class="meta">2025 · Simulation of Systems (SmSs) · Python · CoppeliaSim, pygame</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>A small car in CoppeliaSim that follows a path around an obstacle course, avoids obstacles,
+      parallel-parks on its own, and can also be driven by hand with a Logitech MOMO steering wheel
+      and pedals.</dd>
+    <dt>How</dt>
+    <dd>A Python client steps the simulation through CoppeliaSim's ZeroMQ remote API. In automatic
+      mode a PID controller steers towards the next reference point; when the front proximity sensor
+      sees an obstacle the car steers at full lock away from it; parking mode switches to the parking
+      references once the car passes the bay. In manual mode the wheel and pedals, read with pygame,
+      set steering and speed directly, and a small terminal interface shows the mode and state.</dd>
+  </dl>
+  <figure>
+    <div class="gallery">
+      <a href="assets/gallery/coppeliasim/coppeliasim-course.png" data-caption="The obstacle course built in CoppeliaSim."><img src="assets/gallery/coppeliasim/coppeliasim-course-thumb.jpg" width="480" height="388" loading="lazy" alt="Top view of the CoppeliaSim scene: the obstacle course the car drives around."></a>
+      <a href="assets/gallery/coppeliasim/coppeliasim-parked.png" data-caption="The car after the automatic parallel-parking routine."><img src="assets/gallery/coppeliasim/coppeliasim-parked-thumb.jpg" width="461" height="388" loading="lazy" alt="The car parked in the parking bay after the automatic manoeuvre."></a>
+    </div>
+  </figure>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/coppeliasim-vehicle-pid-navigation">Code and report on GitHub</a></li>
+  </ul>
+
+  <h3 id="fifa">A FIFA 2024 team picked under budget, wage and gender constraints</h3>
+  <p class="meta">2025 · Sensory Perception (PSN) · Python, pandas · with Diogo Novais and João Santa-Rita</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>Choose 11 players from about 20&nbsp;000 in the FIFA 2024 data for a 4-3-3 team that is as
+      strong and balanced as possible, within an acquisition budget, a monthly wage cap, a budget split
+      across defence, midfield and attack, and at least four players of each gender.</dd>
+    <dt>How</dt>
+    <dd>Each role gets a score from the related FIFA position ratings, and a pool of the 300 best
+      affordable players per role cuts the search space. Teams are built around a seed player, filling
+      the other roles with candidates close to its rating and checking every constraint on each
+      addition, then polished by swapping out the least balanced player. An evolutionary search keeps
+      the best 15&nbsp;% of each generation by a fitness that rewards a high, even rating and penalises
+      age and cost.</dd>
+  </dl>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/fifa-mixed-team-optimizer">Code, write-up and slides on GitHub</a></li>
+  </ul>
+
   <h3 id="capture-wiki">CAPTURE wiki</h3>
   <p class="meta">2025 · MkDocs</p>
   <p>Documentation for preparing, testing and flying indoor and outdoor missions with the lab's
@@ -249,6 +292,30 @@
 
   <!-- ============================================================ -->
   <h2 id="y2024">2024</h2>
+
+  <h3 id="intelligent-control">Adaptive, neural-network and fuzzy control of a real thermal process</h3>
+  <p class="meta">2024 · Intelligent Control (CI) · MATLAB · with Rafael Louro</p>
+  <dl class="facts">
+    <dt>What</dt>
+    <dd>Three controllers for the same lab plant, a PCT 37-100 air heater, each designed in simulation
+      and then run on the real process.</dd>
+    <dt>How</dt>
+    <dd>An ARX model identified from experimental data, a pole-placement controller on it, and an
+      adaptive version that re-estimates the model online with recursive least squares. Then a neural
+      network of the process and a second one trained as its inverse, combined in internal model
+      control. Last, a PI controller with Mamdani fuzzy inference, its scaling factors from
+      Ziegler&ndash;Nichols on the ARX model, tested against changes in the air intake.</dd>
+  </dl>
+  <figure>
+    <div class="gallery">
+      <a href="assets/gallery/intelligent-control/ci-adaptive.png" data-caption="Adaptive controller on the real process: reference (green), measured temperature (blue) and control input (red)."><img src="assets/gallery/intelligent-control/ci-adaptive-thumb.jpg" width="480" height="232" loading="lazy" alt="Plot of the real process under the adaptive controller: the measured temperature follows a stepped reference closely."></a>
+      <a href="assets/gallery/intelligent-control/ci-nn-imc.png" data-caption="Neural-network IMC on the real process: stepped input (red) and measured temperature (blue)."><img src="assets/gallery/intelligent-control/ci-nn-imc-thumb.jpg" width="480" height="232" loading="lazy" alt="Plot of the real process under the neural-network controller following a stepped reference."></a>
+      <a href="assets/gallery/intelligent-control/ci-fuzzy.png" data-caption="Fuzzy PI on the real process, with disturbances in the air intake."><img src="assets/gallery/intelligent-control/ci-fuzzy-thumb.jpg" width="480" height="232" loading="lazy" alt="Plot of the real process under the fuzzy PI controller: the temperature returns to the stepped reference after each disturbance."></a>
+    </div>
+  </figure>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/intelligent-control-thermal-process">Code, data and reports on GitHub</a> (reports in Portuguese)</li>
+  </ul>
 
   <h3 id="road-signs">Road-sign recognition with hand-written image processing</h3>
   <p class="meta">2024 · Sensor Systems (SS) · C#, Emgu CV · with Diogo Novais</p>
@@ -395,6 +462,9 @@
   <p>Three lab projects against simulated industrial plants: a splitter conveyor controlled by FreeRTOS
     tasks with events, queues and shared-resource locking; an automated pallet storage system written in
     Java; and a car-wash service manager in C++.</p>
+  <ul class="links">
+    <li><a href="https://github.com/Filipe-Cavalheiro/real-time-systems-labs">Code on GitHub</a> (our code only; the course's simulators are not included)</li>
+  </ul>
 
   <h3 id="ml4space">ML4Space: machine learning for space, and a three-body hackathon</h3>
   <p class="meta">September 2023 · ML4Space Summer School, NOVA FCT · Python · <span class="status">hackathon: 6th of 7 teams</span></p>
